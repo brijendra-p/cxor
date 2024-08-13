@@ -1,38 +1,38 @@
 package models
 
 type Token struct {
-	Encrypt   int
-	Decrypt   int
-	Unlimited bool
+	encrypt   int
+	decrypt   int
+	unlimited bool
 }
 
 func (t *Token) SetEncryptToken(token int) {
-	t.Encrypt = token
+	t.encrypt = token
 }
 
 func (t *Token) GetEncryptToken() int {
-	return t.Encrypt
+	return t.encrypt
 }
 
 func (t *Token) UsingEncryptToken() {
-	t.Encrypt -= 1
+	t.encrypt -= 1
 }
 
 func (t *Token) SetDecryptToken(token int) {
-	t.Decrypt = token
+	t.decrypt = token
 }
 
 func (t *Token) GetDecryptToken() int {
-	return t.Decrypt
+	return t.decrypt
 }
 
 func (t *Token) UsingDecryptToken() {
-	t.Decrypt -= 1
+	t.decrypt -= 1
 }
 
 func (t *Token) SetUnlimited() {
-	t.Unlimited = true
+	t.unlimited = true
 }
 func (t *Token) IsUnlimited() bool {
-	return t.Unlimited
+	return t.unlimited
 }

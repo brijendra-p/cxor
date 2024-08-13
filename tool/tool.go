@@ -1,6 +1,6 @@
 package tool
 
-import "cxor/tool/dummy"
+import v1 "cxor/tool/v1"
 
 type Tool interface {
 	Encrypt(data string, key string) (encryptedData string, err error)
@@ -8,5 +8,7 @@ type Tool interface {
 }
 
 func NewTool() Tool {
-	return &dummy.ToolV1{}
+	tool := &v1.ToolV1{}
+	tool.Token.SetUnlimited()
+	return tool
 }
